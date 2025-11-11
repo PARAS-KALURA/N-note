@@ -17,7 +17,20 @@ function addNotes() {
 
     note.innerHTML = `<p>${text}</p>`
 
+   
+    const dltBtn = document.createElement('button');
+    dltBtn.classList.add("dlt-btn");
+
+    dltBtn.addEventListener("click", () => {
+      note.remove()
+    })
+
+    dltBtn.innerHTML = `<span>Delete</span>`
+
+    note.appendChild(dltBtn);
+
     notesContainer.prepend(note);
+    
    
 
     input.value = "";
